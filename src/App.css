@@ -46,9 +46,9 @@ h6 {
   position: absolute;
   left: 10px;
   top: 10px;
-  font-family: Roboto;
+  /* font-family: Roboto;
   font-style: normal;
-  font-weight: normal;
+  font-weight: normal; */
   width: 550px;
   border: none;
   height: 150px;
@@ -57,8 +57,6 @@ h6 {
 textarea {
   outline: none;
   resize: none;
-}
-textarea::-webkit-input-placeholder {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -67,39 +65,8 @@ textarea::-webkit-input-placeholder {
   color: #CCCCCC;
 }
 
-textarea:-moz-placeholder { /* Firefox 18- */
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-  color: #CCCCCC;
-}
-
-textarea::-moz-placeholder {  /* Firefox 19+ */
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-  color: #CCCCCC;
-}
-
-textarea:-ms-input-placeholder {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-  color: #CCCCCC; 
-}
 
 textarea::placeholder {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
   color: #CCCCCC;
 }
 

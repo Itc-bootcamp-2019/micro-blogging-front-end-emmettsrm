@@ -46,9 +46,6 @@ h6 {
   position: absolute;
   left: 10px;
   top: 10px;
-  /* font-family: Roboto;
-  font-style: normal;
-  font-weight: normal; */
   width: 550px;
   border: none;
   height: 150px;
@@ -86,6 +83,9 @@ button {
   position: absolute;
   bottom: 10px;
   right: 10px;
+}
+button:disabled {
+  opacity: 0.4;
 }
 
 .tweetError {

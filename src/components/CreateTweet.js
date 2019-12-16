@@ -21,10 +21,12 @@ class CreateTweet extends React.Component {
     
     
     render(){
+        const {tweet} = this.state;
+        const sendEnabled = tweet.length > 0 && tweet.length <141;
         return (
             <div className="createTweet">
                 <textarea className="writeTweet" onChange={(event)=>this.onTweetChange(event)}type="text" placeholder="What you have in mind..." ></textarea>
-                <button onClick={() => this.onSendTweet()}>Tweet</button>
+                <button disabled={!sendEnabled} onClick={() => this.onSendTweet()}>Tweet</button>
             </div>
         )}
 

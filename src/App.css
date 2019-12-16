@@ -1,38 +1,63 @@
+body {
+  background-color: #E5E5E5;
+  margin: 0;
+}
+h6 {
+  color: #6C757D;
+  font-size: 14px;
+  line-height: 16px;
+}
+
 .App {
   text-align: center;
+  width: 600px;
+  margin-left: 367px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tweet {
+  background-color: #343A40;
+  border-radius: 6px;
+  min-height: 84px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.createTweet {
+  position: absolute;
+  top: 5px;
+  border: 2px solid #CCCCCC;
+  box-sizing: border-box;
+  border-radius: 6px;
+  height: 190px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button {
+  font-size: 16px;
+  line-height: 19px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  color: #FFFFFF;
+  background: #007BFF;
+  border-radius: 4px;
+  width: 68px;
+  height: 34px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tweetError {
+  background: #F8D7DA;
+  border: 1px solid #F5C6CB;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 19px;
+  display: hidden;
 }

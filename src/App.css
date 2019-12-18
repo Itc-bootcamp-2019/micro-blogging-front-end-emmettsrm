@@ -25,7 +25,9 @@ h6 {
   width: 100%;
   font-size: 14px;
   line-height: 16px;
-  color: #FFFFFF;
+  color:black;
+  position: absolute;
+  bottom: 50px;
 }
 
 .createTweet {

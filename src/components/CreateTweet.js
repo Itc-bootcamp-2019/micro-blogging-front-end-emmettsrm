@@ -1,5 +1,5 @@
 import React from 'react';
-// import { PostTweet } from './api';
+
 
 class CreateTweet extends React.Component {
     constructor(props) {
@@ -7,6 +7,7 @@ class CreateTweet extends React.Component {
         this.state = {
             username: 'becca',
             tweet: '',
+            id: '1',
         }
     }
     onTweetChange(event) {
@@ -14,15 +15,19 @@ class CreateTweet extends React.Component {
     }
     
     onSendTweet() {
-        const {tweet} = this.state;
-        const { onTweetPosted } = this.props
-        console.log(tweet)
+        let tweetsArray = JSON.parse(localStorage.getItem('tweets')) || [];
+        console.log(tweetsArray);
+        let {tweet} = this.state;
+        tweetsArray.push(tweet);
+        localStorage.setItem('tweets', JSON.stringify(tweetsArray));
+        console.log(localStorage);
+        
     }
     
     
     render(){
         const {tweet} = this.state;
-        const sendEnabled = tweet.length > 0 && tweet.length <141;
+        const sendEnabled = tweet && tweet.length <141;
         return (
             <div className="createTweet">
                 <textarea className="writeTweet" onChange={(event)=>this.onTweetChange(event)}type="text" placeholder="What you have in mind..." ></textarea>

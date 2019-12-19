@@ -16,23 +16,26 @@ h6 {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
+  
 }
 
 .tweet {
   background-color: #343A40;
   border-radius: 6px;
   min-height: 84px;
-  width: 100%;
+  width: 600px;
   font-size: 14px;
   line-height: 16px;
-  color:black;
-  position: absolute;
-  bottom: 50px;
+  color:white;
+  margin-top: 1px;
+  text-align: left;
+  padding-left: 3px;
+  box-sizing: border-box;
 }
 
 .createTweet {
   position: absolute;
-  top: 5px;
+  top: 20px;
   border: 2px solid #CCCCCC;
   box-sizing: border-box;
   border-radius: 6px;
@@ -41,6 +44,8 @@ h6 {
   font-size: 14px;
   line-height: 19px;
   color: #CCCCCC;
+  display: block;
+  margin-bottom: 30px;
 }
 
 .writeTweet {
@@ -51,6 +56,7 @@ h6 {
   width: 550px;
   border: none;
   height: 150px;
+  display: block;
   
 }
 textarea {
@@ -62,6 +68,11 @@ textarea {
   font-size: 16px;
   line-height: 19px;
   color: #CCCCCC;
+}
+
+.container {
+  position: absolute;
+  top: 250px;
 }
 
 

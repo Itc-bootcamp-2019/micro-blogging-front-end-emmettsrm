@@ -8,14 +8,25 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tweets: JSON.parse(localStorage.getItem('tweets')) || [],
+      tweets: []
     }
   } 
+  componentDidMount() {
+    this.setState(
+      {tweets: JSON.parse(localStorage.getItem('tweets')) || []}
+    )
+  }
+  loadTweets() {
+    this.setState(
+      {tweets: JSON.parse(localStorage.getItem('tweets')) || []}
+    )
+  }
+  
   render() {
     return (
       <div className="App">
-        <CreateTweet />
-        <TweetList tweets={JSON.parse(localStorage.getItem('tweets')) || []}></TweetList>
+        <CreateTweet onTweetCreated={() => this.loadTweets()} />
+        <TweetList tweets={this.state.tweets}></TweetList>
       </div>
     );
   }

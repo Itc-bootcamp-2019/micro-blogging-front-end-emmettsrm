@@ -4,6 +4,7 @@ class TweetList extends React.Component {
     constructor(props) {
         super (props);
         this.state = {
+            username: "becca",
             id: '1',
         }
     }
@@ -11,17 +12,19 @@ class TweetList extends React.Component {
 
     render() {
         let {tweets} = this.props;
+        let {username} = this.state;
         return (
-            <ul>
+            <div className="container">
                 {tweets.map(tweet => {
-                    let {printedTweet} = tweet;
+                    console.log(tweet);
                     return (
-                        <li>
-                            <div className="tweet">{printedTweet}</div>
-                        </li>
+                        <div className="tweet">
+                            <h6>{username}</h6><h6></h6>
+                           <p> {tweet} </p>
+                        </div>
                     );
                 })}
-            </ul>
+            </div>
         )
     }
 

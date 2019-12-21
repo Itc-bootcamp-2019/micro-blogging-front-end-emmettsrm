@@ -9,7 +9,7 @@ class CreateTweet extends React.Component {
         this.state = {
             "content": '',
             "userName": '1234',
-            "date": new Date().toISOString(),
+            "date": '',
             "loading": false
         }
 
@@ -20,6 +20,7 @@ class CreateTweet extends React.Component {
     }
 
     onSendTweet() {
+        this.setState({'date': new Date().toISOString()})
         this.setState({'loading': true})
         const { onTweetCreated }= this.props;
         const  date  = this.state.date;

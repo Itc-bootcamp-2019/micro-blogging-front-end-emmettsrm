@@ -18,6 +18,11 @@ h6 {
   font-weight: normal;
   
 }
+.date{
+  position: relative;
+  bottom: 47px;
+  left: 418px;
+}
 
 .tweet {
   background-color: #343A40;

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import CreateTweet from './components/CreateTweet'
 import TweetList from './components/TweetList'
-
+import { getTweets } from './lib/api'
 
 class App extends React.Component {
   constructor(props) {
@@ -12,14 +12,13 @@ class App extends React.Component {
     }
   } 
   componentDidMount() {
-    this.setState(
-      {tweets: JSON.parse(localStorage.getItem('tweets')) || []}
-    )
+    this.loadTweets();
   }
+
   loadTweets() {
-    this.setState(
-      {tweets: JSON.parse(localStorage.getItem('tweets')) || []}
-    )
+    getTweets().then(response => {
+      this.setState({ tweets: response.data.tweets.sort()})
+    })
   }
   
   render() {

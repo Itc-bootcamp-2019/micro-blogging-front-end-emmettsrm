@@ -23,6 +23,11 @@ h6 {
   bottom: 47px;
   left: 418px;
 }
+.loading {
+  position: relative;
+  top: 60px;
+  left: 10px;
+}
 
 .tweet {
   background-color: #343A40;

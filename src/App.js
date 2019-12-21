@@ -8,7 +8,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tweets: []
+      tweets: [],
+      loading: false
     }
   } 
   componentDidMount() {

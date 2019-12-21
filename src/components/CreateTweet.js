@@ -1,14 +1,16 @@
 import React from 'react';
-import { createTweet } from '../lib/api'
-import axios from 'axios'
+import { createTweet } from '../lib/api';
+import Loader from 'react-loader-spinner';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 class CreateTweet extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            "content": 'wqwq',
+            "content": '',
             "userName": '1234',
-            "date": new Date().toISOString()
+            "date": new Date().toISOString(),
+            "loading": false
         }
 
     }
@@ -18,25 +20,28 @@ class CreateTweet extends React.Component {
     }
 
     onSendTweet() {
+        this.setState({'loading': true})
         const { onTweetCreated }= this.props;
         const  date  = this.state.date;
         const  userName  = this.state.userName;
         const  content  = this.state.content;
-        const {tweet} = {userName, content, date};
-        createTweet({"tweet": {content:content, userName:userName, date:date}}).then(() => {
-            console.log("tweet was posted!");
+        createTweet({"tweet": {content:content, userName:userName, date:date}}).then((response) => {
+            this.setState({'loading': false});
             onTweetCreated();
-        }).catch(alert("Sorry, try again later."))     
+        }).catch((error) => {
+            this.setState({'loading': false});
+            alert("Error. Please try again later.")})     
     }
 
 
 
     render() {
-        // const { content } = this.state.content;
+        let loading = this.state.loading;
         const sendEnabled = this.state.content && this.state.content.length < 141;
         return (
             <div className="createTweet">
-                <textarea className="writeTweet" onChange={(event) => this.onTweetChange(event)} type="text" placeholder="What you have in mind..." ></textarea>
+                {!loading && <textarea className="writeTweet" onChange={(event) => this.onTweetChange(event)} type="text" placeholder="What you have in mind..." ></textarea>}
+                {loading && <Loader type="Oval" height={60} width={60} color="gray" className="loading"/>}
                 <button disabled={!sendEnabled} onClick={() => this.onSendTweet()}>Tweet</button>
             </div>
         )

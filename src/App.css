@@ -1,12 +1,84 @@
 body {
   /* background-color: #E5E5E5; */
-  background-color: #E5E5E5;
+  background-color: #15202B;
   margin: 0;
 }
 h6 {
   color: #6C757D;
   font-size: 14px;
   line-height: 16px;
+}
+h4 {
+  color: white;
+  font-size: 18px;
+  line-height: 16px;
+  margin-bottom: 2px;
+  font-weight: normal;
+  font-family: Roboto;
+  position: relative;
+  bottom: 147px;
+  right: 133px;
+}
+
+p {
+  margin-bottom: 25px;
+  margin-left: 15px;
+  position: relative;
+  bottom: 35px;
+}
+
+.navbar {
+  position: absolute;
+  width: 1076px;
+  height: 58px;
+  left: 182px;
+  background: #343A40;
+  border-radius: 6px;
+}
+
+li {
+  list-style-type: none;
+  font-weight: normal;
+}
+ul{
+  display: flex;
+  flex-direction: row;
+}
+
+.login {
+  position: absolute;
+  left: 42%;
+  top: 40%;
+}
+
+.changeUser {
+  position: relative;
+  bottom: 119px;
+  left: 397px;
+  
+}
+
+input:focus{
+  outline:none;
+  padding-left: 10px;
+}
+
+.user{
+  border: 2px solid #CCCCCC;
+  box-sizing: border-box;
+  border-radius: 6px;
+  width: 600px;
+  height: 61px;
+  background-color: transparent;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: white;
+  position: relative;
+  bottom: 140px;
+  right: 134px;
 }
 
 .App {
@@ -32,10 +104,9 @@ h6 {
 .tweet {
   background-color: #343A40;
   border-radius: 6px;
-  min-height: 84px;
+  min-height: 40px;
   width: 600px;
   font-size: 14px;
-  line-height: 16px;
   color:white;
   margin-top: 1px;
   text-align: left;
@@ -45,7 +116,7 @@ h6 {
 
 .createTweet {
   position: absolute;
-  top: 20px;
+  top: 76px;
   border: 2px solid #CCCCCC;
   box-sizing: border-box;
   border-radius: 6px;
@@ -119,4 +190,25 @@ button:disabled {
   font-size: 16px;
   line-height: 19px;
   display: hidden;
+}
+
+h5{
+  text-decoration: none;
+  color: white;
+  margin-right: 30px;
+  font-size: 14px;
+  position: relative;
+  bottom: 20px;
+  font-family: Roboto;
+  
+}
+h1{
+  font-family: Roboto;
+  font-size: 36px;
+  color: white;
+  font-weight: normal;
+  position: relative;
+  bottom: 193px;
+  right: 137px;
+
 }

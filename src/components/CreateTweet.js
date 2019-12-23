@@ -3,12 +3,14 @@ import { createTweet } from '../lib/api';
 import Loader from 'react-loader-spinner';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
+
+
 class CreateTweet extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             "content": '',
-            "userName": '1234',
+            "userName": '',
             "date": '',
             "loading": false
         }
@@ -20,13 +22,14 @@ class CreateTweet extends React.Component {
     }
 
     onSendTweet() {
+        this.setState({ 'userName': localStorage.getItem('username') })
         this.setState({'date': new Date().toISOString()})
         this.setState({'loading': true})
         const { onTweetCreated }= this.props;
         const  date  = this.state.date;
         const  userName  = this.state.userName;
         const  content  = this.state.content;
-        createTweet({"tweet": {content:content, userName:userName, date:date}}).then((response) => {
+        createTweet({tweet: {content:content, userName:userName, date:date}}).then((response) => {
             this.setState({'loading': false});
             onTweetCreated();
         }).catch((error) => {

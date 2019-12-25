@@ -10,6 +10,7 @@ import {
   Link 
 } from 'react-router-dom';
 import Profile from './components/Profile'
+import MyContext from './lib/MyContext';
 
 
 class App extends React.Component {
@@ -17,20 +18,27 @@ class App extends React.Component {
     super(props);
     this.state = {
       tweets: [],
-      loading: false
+      loading: false,
+      onTweetCreated: this.loadTweets,
     }
   } 
   componentDidMount() {
     this.loadTweets();
+    this.interval = setInterval(this.loadTweets ,10000);
   }
 
-  loadTweets() {
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  loadTweets = () => {
     getTweets().then(response => {
       this.setState({ tweets: response.data.tweets.sort()})
     })
   }
   
   render() {
+  
     return (
       <Router>
       <nav className="navbar">
@@ -45,10 +53,13 @@ class App extends React.Component {
       </nav>
       <Switch>
         <Route exact path="/">
-          <div className="App">
-            <CreateTweet onTweetCreated={() => this.loadTweets()} />
-            <TweetList tweets={this.state.tweets}></TweetList>
-          </div>
+          <MyContext.Provider value={this.state}>
+            <div className="App">
+              <CreateTweet />
+              <TweetList />
+            </div>
+          </MyContext.Provider>
+          
         </Route>
         <Route exact path="/profile">
           <Profile />
@@ -60,6 +71,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-
-//////background color from figma???
